@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, any part of it, or ideas and methods presented in this repository in your research or publications, please cite this repository."
+title: "Quantum Lattice Boltzmann Method for 2D Fluid Flow"
+authors:
+  - family-names: Markazi
+    given-names: Navid
+version: 1.0.0
+license: Apache-2.0
+type: software
+abstract: >-
+  A simulator-based quantum-circuit prototype of the D2Q9
+  Lattice Boltzmann Method for two-dimensional fluid flow,
+  implemented using Python and PennyLane.
+keywords:
+  - Quantum computing
+  - Lattice Boltzmann Method
+  - Computational fluid dynamics
+  - PennyLane
+  - Quantum circuit simulation

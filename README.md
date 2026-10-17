@@ -1,8 +1,3 @@
-# Quantum-Lattice-Boltzmann-Method
-Quantum-circuit prototype of the D2Q9 Lattice Boltzmann Method using PennyLane, implementing collision, bounce-back, and streaming operations for 2D fluid flow around a square obstacle, with classical validation.
-
-
-
  # Quantum Lattice Boltzmann Method for 2D Fluid Flow
 
 This repository contains a **PennyLane-based quantum-circuit prototype of the Lattice Boltzmann Method (LBM)** for a two-dimensional flow field with a square obstacle. The notebook implements quantum-circuit operations corresponding to collision, bounce-back, and streaming, and compares the reconstructed distribution functions with a classical LBM implementation on a small lattice.

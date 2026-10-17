@@ -51,11 +51,7 @@ The implementation uses the following settings in the notebook:
 The initial horizontal velocity includes a small sinusoidal perturbation to introduce spatial variation. The horizontal and vertical velocities are set to zero in the obstacle mask during initialization.
 
 The equilibrium distribution is computed classically using the standard second-order D2Q9 equilibrium expression implemented in the notebook:
-
-\[
-f_i^{\mathrm{eq}}=w_i\rho\left[1+3(\mathbf{c}_i\cdot\mathbf{u})+4.5(\mathbf{c}_i\cdot\mathbf{u})^2-1.5|\mathbf{u}|^2\right].
-\]
-
+$f_i^{\mathrm{eq}}=w_i\rho\left[1+3(\mathbf{c}_i\cdot\mathbf{u})+4.5(\mathbf{c}_i\cdot\mathbf{u})^2-1.5|\mathbf{u}|^2\right].$
 Here, \(w_i\) denotes the lattice weight, \(\mathbf{c}_i\) is the discrete velocity for direction \(i\), and \(\mathbf{u}=(u_x,u_y)\) is the macroscopic velocity.
 
 ---

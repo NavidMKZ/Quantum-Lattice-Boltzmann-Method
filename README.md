@@ -52,9 +52,9 @@ The initial horizontal velocity includes a small sinusoidal perturbation to intr
 
 The equilibrium distribution is computed classically using the standard second-order D2Q9 equilibrium expression implemented in the notebook:
 
-$$
+$
 f_i^{\mathrm{eq}}=w_i\rho\left[1+3(\mathbf{c}_i\cdot\mathbf{u})+4.5(\mathbf{c}_i\cdot\mathbf{u})^2-1.5|\mathbf{u}|^2\right].
-$$
+$
 
 Here, \(w_i\) denotes the lattice weight, \(\mathbf{c}_i\) is the discrete velocity for direction \(i\), and \(\mathbf{u}=(u_x,u_y)\) is the macroscopic velocity.
 
@@ -80,9 +80,9 @@ The `IDX`, `ROW`, and `COL` registers provide the address of a distribution elem
 
 For a distribution value \(v\), the code uses angle encoding of the form
 
-$$
+$
 \theta=2\arcsin\left(\frac{v}{\mathrm{scale}}\right),
-$$
+$
 
 where the value is clipped to the valid range before calculating the angle. Consequently, the amplitude of the \(|1\rangle\) component is proportional to the scaled value.
 
@@ -92,15 +92,15 @@ This is an **addressed, element-by-element encoding**. It is not amplitude encod
 
 The classical BGK collision update has the form
 
-$$
+$
 f_i^\*=(1-\Omega)f_i+\Omega f_i^{\mathrm{eq}}.
-$$
+$
 
 The quantum circuit uses the normalization
 
-$$
+$
 \Lambda=|1-\Omega|+|\Omega|
-$$
+$
 
 to construct the normalized linear combination in its `WHICH` branches. The signs of the collision coefficients are incorporated in the controlled rotations. During simulator-side extraction, the known normalization is removed to reconstruct the physical post-collision distribution.
 
@@ -112,9 +112,9 @@ At cells marked as part of the obstacle, the circuit directly encodes the distri
 
 For each lattice direction, the row and column registers are shifted according to the corresponding discrete velocity. The shifts are represented with controlled permutation unitaries and use periodic indexing:
 
-$$
+$
 (r,c)\mapsto((r+c_x)\bmod n,(c+c_y)\bmod n).
-$$
+$
 
 ### Classical Macroscopic Quantities
 
@@ -130,9 +130,9 @@ The notebook contains two classical LBM experiments and one small-grid quantum/c
 
 The quantum and classical implementations are both run on a \(4\times4\) lattice for **two time steps**. The notebook compares the resulting distribution tensors using the mean absolute error:
 
-$$
+$
 \mathrm{MAE}=\operatorname{mean}\left(|f_{\mathrm{classical}}-f_{\mathrm{quantum}}|\right).
-$$
+$
 
 For the saved notebook run, the reported value is:
 
@@ -160,9 +160,9 @@ This longer run illustrates the classical LBM evolution and produces vorticity v
 
 The notebook computes the vorticity from spatial derivatives of the macroscopic velocity components:
 
-$$
+$
 \omega_z=\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y}.
-$$
+$
 
 It plots the vorticity field and overlays the obstacle mask, allowing qualitative inspection of the flow field as the simulation progresses.
 
